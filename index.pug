@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css")
+    link(rel="stylesheet", href="../style.css")
+  body
+    .d-flex.wrap
+        //- header start
+        include navbar.pug
+        //- header end
+        .main
+            .header
+                nav.nav
+                    .title Assignment
+                        a.addBtn.ml-5(href='#') All Courses
+                            i.fas.fa-chevron-down.ml-2
+                    .iconArea
+                        i.fas.fa-search
+                        i.fas.fa-bell
+            .content
+                .d-flex.justify-content-between.mb-1
+                    a.addBtn(href='#') All (4)
+                        i.fas.fa-chevron-down.ml-2
+                    small.text-muted 2 comments
+                .row
+                    .col-4
+                        #list-tab.list-group(role='tablist')
+                            a#list-home-list.list-group-item.list-group-item-action.active(data-toggle='list', href='#list-home', role='tab', aria-controls='home')
+                                .d-flex.justify-content-between
+                                    small Chapter Assignment 2
+                                    small 4 hrs ago
+                                .d-flex.justify-content-between.align-items-baseline
+                                    h6.mb-1 Please check this file&mldr;
+                                    small.text-muted Emily Wang
+                            a#list-profile-list.list-group-item.list-group-item-action(data-toggle='list', href='#list-profile', role='tab', aria-controls='profile')
+                                .d-flex.justify-content-between
+                                    small Chapter Assignment 1
+                                    small 12 hrs ago
+                                .d-flex.justify-content-between.align-items-baseline
+                                    h6.mb-1 My Homework
+                                    small.text-muted David Xu
+                            a#list-messages-list.list-group-item.list-group-item-action(data-toggle='list', href='#list-messages', role='tab', aria-controls='messages')
+                                .d-flex.justify-content-between
+                                    small Final Assignment
+                                    small 18 hrs ago
+                                .d-flex.justify-content-between.align-items-baseline
+                                    h6.mb-1 Have a problem with this&mldr;
+                                    small.text-muted Tony Wei
+                            a#list-settings-list.list-group-item.list-group-item-action(data-toggle='list', href='#list-settings', role='tab', aria-controls='settings')
+                                .d-flex.justify-content-between
+                                    small Final Assignment
+                                    small 19 hrs ago
+                                .d-flex.justify-content-between.align-items-baseline
+                                    h6.mb-1 Did I do it right?
+                                    small.text-muted Christina Lin
+                    .col-8
+                        #nav-tabContent.tab-content
+                            #list-home.tab-pane.fade.show.active.position-relative(role='tabpanel', aria-labelledby='list-home-list')
+                                .card
+                                    .card-header
+                                        .d-flex.justify-content-between.align-items-center
+                                            .text
+                                                small Chapter Assignment 2 / HTML&amp;CSS
+                                                h6.mb-0 Please check this file for me, thanks!
+                                            i.fas.fa-ellipsis-v
+                                    .card-body
+                                        .row
+                                            .col-12.d-flex
+                                                img.rounded-circle(src='https://images.unsplash.com/photo-1553798194-cc0213ae7f99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80', width='40', height='40', alt='...')
+                                                .people-info.ml-2.border-bottom.pb-3
+                                                    h6.mb-1 Emily Wang
+                                                    small.text-muted 10:38 AM (4 hours ago)
+                                                    p.mt-3.font-size-sm
+                                                        | Hi Teacher, the attached file is my homework of chapter 2. And here comes a question: Why in the following code the height of the 
+                                                        code.code div
+                                                        |  is bigger than the height of the 
+                                                        code.code img
+                                                        |  ? There is a gap below the image, but it doesn&rsquo;t seems to be a padding/margin. What is the gap or extra space below image?
+                                                    a.file-link.btn(href='')
+                                                        i.mr-2.fas.fa-file-upload
+                                                        | HW-2-David.zip
+                                            .col-12.d-flex.pt-4
+                                                img.rounded-circle(src='https://images.unsplash.com/photo-1553798194-cc0213ae7f99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80', width='40', height='40', alt='...')
+                                                .people-info.ml-2.pb-3
+                                                    .d-flex.justify-content-between
+                                                        h6.mb-1 Andy Chen (You)
+                                                        .icons
+                                                            i.mr-4.far.fa-star
+                                                            i.fas.fa-pen
+                                                    small.text-muted 13:24 AM (1 hours ago)
+                                                    p.mt-3.font-size-sm
+                                                        | Hi David, by default, an image is rendered inline, like a letter so it sits on the same line that a, b, c and d sit on. There is space below that line for the descenders you find on letters like g, j, p and q. 
+                                                        br
+                                                        br
+                                                        |  You can: 
+                                                        br
+                                                        ul.font-size-sm
+                                                            li
+                                                                | adjust the 
+                                                                code.code vertical-align
+                                                                |  of the image to position it elsewhere (e.g. the 
+                                                                code.code middle
+                                                                |  )
+                                                            li
+                                                                | change the 
+                                                                code.code display
+                                                                |  so it isn&rsquo;t inline.
+                                .d-flex.justify-content-between.align-items-center.mt-3
+                                    .group
+                                        i.fas.fa-angle-left.mr-4
+                                        i.fas.fa-angle-right
+                                    .group
+                                        button.btn.btn-outline-success(type='button') Mark as read
+                                        button.btn.btn-success.reply.ml-4(type='button') Reply
+                                .card.position-absolute.edit-card
+                                    .card-header
+                                        .d-flex.align-items-center.ju
+                                            .text
+                                            h6.mb-0
+                                                | Body Text 
+                                                i.ml-1.fas.fa-caret-down
+                                            i.ml-4.fas.fa-bold
+                                            i.fas.fa-italic.ml-4
+                                            i.fas.fa-list-ul.ml-4
+                                            i.ml-4.fas.fa-list-ol
+                                            i.fas.fa-link.ml-4
+                                            i.ml-4.fas.fa-image
+                                    .card-body.outline-none(contenteditable='true')
+                                    .card-footer.d-flex.justify-content-end.border-top-0
+                                        button.btn.btn-outline-success.cancel(type='button') Cancel
+                                        button.btn.btn-success.reply.ml-4(type='button') Reply
+                            #list-profile.tab-pane.fade(role='tabpanel', aria-labelledby='list-profile-list')
+                            #list-messages.tab-pane.fade(role='tabpanel', aria-labelledby='list-messages-list')
+                            #list-settings.tab-pane.fade(role='tabpanel', aria-labelledby='list-settings-list')
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.0/umd/popper.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js")
+    script.
+      $(".edit-card").hide();
+      $(".reply").click(function () {
+      $(".edit-card").show(500);
+      });
+
+      $(".cancel").click(function () {
+      $(".edit-card").hide();
+      });
