@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 html(lang="en")
   head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Document
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css")
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css")
-    link(rel="stylesheet", href="../style.css")
+    include header.pug
   body
     .d-flex.wrap
-        //- header start
+        //- navbar start
         include navbar.pug
-        //- header end
+        //- navbar end
         .main
             .header
                 nav.nav
@@ -136,10 +131,7 @@ html(lang="en")
                             #list-profile.tab-pane.fade(role='tabpanel', aria-labelledby='list-profile-list')
                             #list-messages.tab-pane.fade(role='tabpanel', aria-labelledby='list-messages-list')
                             #list-settings.tab-pane.fade(role='tabpanel', aria-labelledby='list-settings-list')
-
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.0/umd/popper.min.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js")
+    include footer.pug
     script.
       $(".edit-card").hide();
       $(".reply").click(function () {

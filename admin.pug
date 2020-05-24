@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    include header.pug
+  body
+    .d-flex.wrap
+        //- navbar start
+        include navbar.pug
+        //- navbar end
+        .main
+            .header
+                nav.nav
+                    .title
+                        | Admin
+                        a.ml-5.addBtn(href='#', data-toggle='modal', data-target='#addModal')
+                            i.fas.fa-plus
+                            |  Add New Admin
+                    .iconArea
+                        i.fas.fa-search
+                        i.fas.fa-bell
+            .content
+                table.table
+                    thead.thead
+                        tr
+                        th
+                            | ID
+                            i.fas.fa-arrow-down
+                        th Name
+                        th Email
+                        th Verified
+                        th
+                    tbody.tbody
+                        tr
+                        td #1
+                        td Emir Wicks
+                        td emir.wicks@mail.com
+                        td Yes
+                        td
+                            i.fas.fa-eye(data-toggle='modal', data-target='#viewModal')
+                            i.fas.fa-pen(data-toggle='modal', data-target='#editModal')
+                        tr
+                        td #2
+                        td Emir Wicks
+                        td emir.wicks@mail.com
+                        td Yes
+                        td
+                            i.fas.fa-eye
+                            i.fas.fa-pen
+                nav(aria-label='Page navigation example')
+                ul.pagination
+                    li.page-item
+                        a.page-link(href='#', aria-label='Previous')
+                            span(aria-hidden='true')
+                                i.fas.fa-chevron-left
+                    li.page-item.active
+                        a.page-link(href='#') 1
+                    li.page-item
+                        a.page-link(href='#') 2
+                    li.page-item
+                        a.page-link(href='#') 3
+                    li.page-item
+                        a.page-link(href='#', aria-label='Next')
+                            span(aria-hidden='true')
+                                i.fas.fa-chevron-right
+    // addmodal start
+    #addModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    h5#exampleModalLabel.modal-title Add Admin
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        span(aria-hidden='true') &times;
+                .modal-body(style='max-height: calc(100vh - 200px);\
+                overflow-y: auto;')
+                    h5.mb-3 Account
+                    label.mb-1(for='name') Name
+                    input.mb-3#name.form-control.rounded-0(type='text', name='')
+                    label.mb-1(for='email') Email
+                    input.mb-4#email.form-control.rounded-0(type='email', name='')
+                    hr.mb-4
+                    h5.mb-3 Verification
+                    .d-flex.justify-content-between.align-items-center.mb-3
+                        span
+                            i.fas.fa-check-circle.mr-2.text-success
+                            | Verified
+                        small 2020/4/12
+                    button.btn.btn-outline-success.w-100.rounded-0.py-3.mb-4 Send Verification Mail
+                    hr.mb-4
+                    h5.mb-3 Access Level
+                    select.form-control.mb-4(name='', id='')
+                        option(value='Admin') Admin
+                    hr.mb-4
+                    h5.mb-3 Custom Access            
+                    label.mb-3.checkbox-container(for='addLecture') Lecture
+                        input#addLecture(type='checkbox', name='Lecture', value='Lecture')
+                        span.checkmark        
+                    label.mb-3.checkbox-container(for='addCoupon') Coupon
+                        input#addCoupon(type='checkbox', name='Coupon', value='Coupon')
+                        span.checkmark  
+                    label.mb-3.checkbox-container(for='addMessage') Message
+                        input#addMessage(type='checkbox', name='Message', value='Message')
+                        span.checkmark            
+                    label.mb-3.checkbox-container(for='addSetting') Setting
+                        input#addSetting(type='checkbox', name='Setting', value='Setting')
+                        span.checkmark   
+                    label.mb-3.checkbox-container(for='addTaskMenu') Task Menu
+                        input#addTaskMenu(type='checkbox', name='TaskMenu', value='TaskMenu')
+                        span.checkmark
+                .modal-footer
+                    button.btn.btn-outline-success(type='button', data-dismiss='modal') Cancel
+                    button.btn.btn-success(type='button') Add
+    // add modal end
+    // edit modal start
+    #editModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    h5#exampleModalLabel.modal-title Edit Admin
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        span(aria-hidden='true') &times;
+                .modal-body(style='max-height: calc(100vh - 200px);overflow-y: auto;')
+                    h5.mb-3 Account
+                    label.mb-1(for='name') Name
+                    input.mb-3#name.form-control.rounded-0.border-0.bg-green(type='text', name='')
+                    label.mb-1(for='email') Email
+                    input.mb-4#email.form-control.rounded-0.border-0.bg-green(type='email', name='')
+                    hr.mb-4
+                    h5.mb-3 Verification
+                    .d-flex.justify-content-between.align-items-center.mb-3
+                        span
+                            i.fas.fa-check-circle.mr-2.text-success
+                            | Verified
+                        small 2020/4/12
+                    button.btn.btn-outline-success.w-100.rounded-0.py-3.mb-4 Send Verification Mail
+                    hr.mb-4
+                    h5.mb-3 Access Level
+                    select.form-control.mb-4(name='', id='')
+                        option(value='Admin') Admin
+                    hr.mb-4
+                    h5.mb-3 Custom Access   
+                    label.mb-3.checkbox-container(for='editLecture') Lecture
+                        input#editLecture(type='checkbox', name='Lecture', value='Lecture')
+                        span.checkmark
+                    label.mb-3.checkbox-container(for='editCoupon') Coupon
+                        input#editCoupon(type='checkbox', name='Coupon', value='Coupon')
+                        span.checkmark   
+                    label.mb-3.checkbox-container(for='editMessage') Message
+                        input#editMessage(type='checkbox', name='Message', value='Message')
+                        span.checkmark
+                    label.mb-3.checkbox-container(for='editSetting') Setting
+                        input#editSetting(type='checkbox', name='Setting', value='Setting')
+                        span.checkmark
+                    label.mb-4.checkbox-container(for='editTaskMenu') Task Menu
+                        input#editTaskMenu(type='checkbox', name='TaskMenu', value='TaskMenu')
+                        span.checkmark
+                    hr.mb-4
+                    h5.mb-3 Deactivate Account
+                    span.text-danger
+                        i.fas.fa-exclamation-triangle.mr-2.mb-3
+                        | This cannot be undone!
+                    button.btn.btn-outline-danger.w-100.rounded-0.py-3 Deactivate This Account
+                .modal-footer
+                    button.btn.btn-outline-success(type='button', data-dismiss='modal') Cancel
+                    button.btn.btn-success(type='button') Update
+    // edit modal end
+    // view modal start
+    #viewModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+        .modal-dialog.modal-dialog-centered(role='document')
+            .modal-content
+                .modal-body
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        span(aria-hidden='true') &times;
+                    .container-fluid
+                        .row
+                            .col-4.img-container
+                            .col-8
+                                p.mb-2 #1
+                                p.mb-0 Admin
+                                h4.mb-2 Emir Wicks
+                                small emir.wicks@mail.com
+                                .d-flex.justify-content-between.mt-3
+                                    a.badge.badge-green(href='#') verified
+                                    i.fas.fa-chevron-down.toggle(data-toggle='collapse', href='#collapseExample', role='button', aria-expanded='false', aria-controls='collapseExample')
+                                #collapseExample.collapse.mt-3
+                                    button.btn.btn-outline-danger.deact-btn.rounded-0.mr-2 deactivate
+                                    button.btn.btn-success.edit-btn.rounded-0 Edit
+    // view modal end
+    include footer.pug
+    script.
+        $(".toggle").click(function(){
+            if($(this).hasClass("fa-chevron-down")){
+                $(this).removeClass("fa-chevron-down");
+                $(this).addClass("fa-chevron-up");
+            }    
+            else{
+                $(this).removeClass("fa-chevron-up");
+                $(this).addClass("fa-chevron-down");
+            }        
+        })
