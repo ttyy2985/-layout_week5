@@ -168,12 +168,15 @@ html(lang="en")
         .modal-dialog.modal-dialog-centered(role='document')
             .modal-content
                 .modal-body
-                    button.close(type='button', data-dismiss='modal', aria-label='Close')
-                        span(aria-hidden='true') &times;
+                   
                     .container-fluid
+                        
                         .row
+                            
                             .col-4.img-container
                             .col-8
+                                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                                    span(aria-hidden='true') &times;
                                 p.mb-2 #1
                                 p.mb-0 Admin
                                 h4.mb-2 Emir Wicks
@@ -182,7 +185,7 @@ html(lang="en")
                                     a.badge.badge-green(href='#') verified
                                     i.fas.fa-chevron-down.toggle(data-toggle='collapse', href='#collapseExample', role='button', aria-expanded='false', aria-controls='collapseExample')
                                 #collapseExample.collapse.mt-3
-                                    button.btn.btn-outline-danger.deact-btn.rounded-0.mr-2 deactivate
+                                    button.btn.btn-outline-danger.deact-btn.rounded-0.mr-3 deactivate
                                     button.btn.btn-success.edit-btn.rounded-0 Edit
     // view modal end
     include footer.pug
