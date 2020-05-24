@@ -124,8 +124,13 @@ a:hover {
   visibility: visible;
 }
 
-.menu .fas {
+.menu .img-container {
+  display: inline-block;
+  width: 25px;
   margin-right: 1.2rem;
+}
+
+.menu .img-container .fas {
   font-size: 20px;
 }
 
